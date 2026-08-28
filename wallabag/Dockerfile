@@ -18,9 +18,18 @@ RUN \
       mariadb-client \
       locales \
       gettext-base \
-    # Prepare install of nodeJS
-    && curl 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key' | apt-key add - \
-    && echo "deb https://deb.nodesource.com/node_${NODE_VERSION}.x $(lsb_release -cs) main" > /etc/apt/sources.list.d/nodesource.list \
+
+    # Prepare installation of Node.js
+    && mkdir -p /usr/share/keyrings \
+    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
+        | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg \
+    && chmod 644 /usr/share/keyrings/nodesource.gpg \
+    && echo "Types: deb" > /etc/apt/sources.list.d/nodesource.sources \
+    && echo "URIs: https://deb.nodesource.com/node_${NODE_VERSION}" >> /etc/apt/sources.list.d/nodesource.sources \
+    && echo "Suites: nodistro" >> /etc/apt/sources.list.d/nodesource.sources \
+    && echo "Components: main" >> /etc/apt/sources.list.d/nodesource.sources \
+    && echo "Architectures: amd64" >> /etc/apt/sources.list.d/nodesource.sources \
+    && echo "Signed-By: /usr/share/keyrings/nodesource.gpg" >> /etc/apt/sources.list.d/nodesource.sources \
     #Install and config PHP 8.3
     && curl -J -L -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
     && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
