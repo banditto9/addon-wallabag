@@ -8,9 +8,7 @@ Wallabag is a web application allowing you to save web pages for later reading.
 Click, save and read it when you want. It extracts content so that you
 won't be distracted by pop-ups and cie.
 
-Further information can be found at [Wallabag].
-
-[:books: Read the full add-on documentation][docs]
+Further information can be found at wallabag.org
 
 ## Author
 
