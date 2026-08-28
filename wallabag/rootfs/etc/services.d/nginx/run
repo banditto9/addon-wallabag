@@ -1,11 +1,20 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
+# Home Assistant Community Add-on: Wallabag
 # Runs the Nginx daemon
 # ==============================================================================
 
 # Wait for PHP-FPM to become available
 bashio::net.wait_for 9001
 
-bashio::log.info "Starting NGinx..."
+bashio::log.info "Testing Nginx configuration..."
+
+if ! nginx -t; then
+    bashio::log.error "Nginx configuration test failed!"
+    exit 1
+fi
+
+bashio::log.info "Nginx configuration is valid."
+bashio::log.info "Starting Nginx..."
 
 exec nginx -g "daemon off;"
