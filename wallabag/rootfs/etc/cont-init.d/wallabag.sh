@@ -13,7 +13,7 @@ bashio::log.info "  PHP-FPM: $(php-fpm8.3 -v 2>/dev/null | head -n 1)"
 bashio::log.info "  Node.js: $(node --version 2>/dev/null || echo 'not installed')"
 bashio::log.info "  Nginx: $(nginx -v 2>&1)"
 bashio::log.info "  MariaDB client: $(mariadb --version 2>/dev/null || echo 'not installed')"
-bashio::log.info "  Base image: ${BUILD_FROM:-unknown}"
+bashio::log.info "  Base image: ${BASE_IMAGE:-unknown}"
 bashio::log.info "=============================================================================="
 
 bashio::log.info "Setting required env vars"
