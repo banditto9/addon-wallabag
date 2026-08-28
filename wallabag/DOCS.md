@@ -11,7 +11,7 @@ Further information can be found at [Wallabag].
 To install this add-on do the following steps:
 
 1. On supervisor -> add-on go to the options and select Repositories.
-1. Add the URL for my addons repo (<https://github.com/coostax/ha-addons.git>)
+1. Add the URL for apps/addons repo
    to the add text box and click on ADD.
 1. Search for the "Wallabag" add-on in the add-on store and install it.
 1. Start the "Wallabag" add-on.
@@ -174,34 +174,6 @@ load css and javascripts correctly.
 The same is true when setting a reverse proxy. `app_url` must be set with
 the https address of the reverse proxy.
 
-## Changelog & Releases
-
-This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
-
-Releases are based on [Semantic Versioning][semver], and use the format
-of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
-based on the following:
-
-- `MAJOR`: Incompatible or major changes.
-- `MINOR`: Backwards-compatible new features and enhancements.
-- `PATCH`: Backwards-compatible bugfixes and package updates.
-
-## Support
-
-Got questions?
-
-You have several options to get them answered:
-
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
 
 ## Authors & contributors
 
@@ -210,40 +182,5 @@ The original setup of this repository is by [Paulo Costa][coostax].
 For a full list of all authors and contributors,
 check [the contributor's page][contributors].
 
-## License
-
-MIT License
-
-Copyright (c) 2022 Paulo Costa
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
 [wallabag]: https://wallabag.org/
 [wallabag-user-docs]: https://doc.wallabag.org/en/user/configuration/user_information.html
-[contributors]: https://github.com/coostax/addon-wallabag/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/community-hass-io-xxxxx/xxxxx
-[coostax]: https://github.com/coostax
-[issue]: https://github.com/coostax/addon-wallabag/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/coostax/addon-wallabag/releases
-[semver]: http://semver.org/spec/v2.0.0.htm
-[this-repo]: https://github.com/coostax/addon-wallabag.git
