@@ -14,7 +14,6 @@ RUN \
       gnupg \
       lsb-release \
       openssl \
-      software-properties-common \
       nginx \
       mariadb-client \
       locales \
@@ -48,9 +47,6 @@ RUN \
         php8.3 \
         imagemagick \
         nodejs \
-    # remove unecessary packages
-    && apt-get purge -y --auto-remove \
-        software-properties-common \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 # Copy Wallabag sources
