@@ -10,7 +10,8 @@ ENV WALLABAG_VERSION=2.6.14
 # hadolint ignore=DL3008,DL4006
 RUN \
     set -x && \
-    apt-get update && apt-get install -y --no-install-recommends \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
       gnupg \
       lsb-release \
       openssl \
@@ -18,7 +19,7 @@ RUN \
       mariadb-client \
       locales \
       gettext-base \
-
+    \
     # Prepare installation of Node.js
     && mkdir -p /usr/share/keyrings \
     && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
@@ -30,11 +31,17 @@ RUN \
     && echo "Components: main" >> /etc/apt/sources.list.d/nodesource.sources \
     && echo "Architectures: amd64" >> /etc/apt/sources.list.d/nodesource.sources \
     && echo "Signed-By: /usr/share/keyrings/nodesource.gpg" >> /etc/apt/sources.list.d/nodesource.sources \
-    #Install and config PHP 8.3
-    && curl -J -L -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
-    && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
+    \
+    # Prepare PHP 8.3 repository
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://packages.sury.org/php/apt.gpg \
+        | gpg --dearmor -o /etc/apt/keyrings/sury-php.gpg \
+    && chmod 644 /etc/apt/keyrings/sury-php.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/sury-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" \
+        > /etc/apt/sources.list.d/php.list \
+    \
     && apt-get update \
-    && apt-get install  -y --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
         php8.3-bcmath \
         php8.3-cli \
         php8.3-curl \
