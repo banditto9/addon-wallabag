@@ -19,18 +19,7 @@ RUN \
       mariadb-client \
       locales \
       gettext-base \
-    \
-    # Prepare installation of Node.js
-    && mkdir -p /usr/share/keyrings \
-    && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key \
-        | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg \
-    && chmod 644 /usr/share/keyrings/nodesource.gpg \
-    && echo "Types: deb" > /etc/apt/sources.list.d/nodesource.sources \
-    && echo "URIs: https://deb.nodesource.com/node_${NODE_VERSION}" >> /etc/apt/sources.list.d/nodesource.sources \
-    && echo "Suites: nodistro" >> /etc/apt/sources.list.d/nodesource.sources \
-    && echo "Components: main" >> /etc/apt/sources.list.d/nodesource.sources \
-    && echo "Architectures: amd64" >> /etc/apt/sources.list.d/nodesource.sources \
-    && echo "Signed-By: /usr/share/keyrings/nodesource.gpg" >> /etc/apt/sources.list.d/nodesource.sources \
+      nodejs \
     \
     # Prepare PHP 8.3 repository
     && mkdir -p /etc/apt/keyrings \
