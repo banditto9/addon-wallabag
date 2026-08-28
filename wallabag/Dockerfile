@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:5.3.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.1.0
 # hadolint ignore=DL3006
 FROM $BUILD_FROM
 
@@ -81,14 +81,14 @@ LABEL \
     io.hass.name="${BUILD_NAME}" \
     io.hass.description="${BUILD_DESCRIPTION}" \
     io.hass.arch="${BUILD_ARCH}" \
-    io.hass.type="addon" \
+    io.hass.type="app" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Paulo Costa <coostax@duck.com>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.authors="Paulo Costa <coostax@duck.com>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.vendor="Home Assistant Add-ons" \
+    org.opencontainers.image.vendor="Home Assistant Add-ons/Apps" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
