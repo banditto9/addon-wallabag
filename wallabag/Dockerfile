@@ -3,8 +3,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.1.0
 FROM $BUILD_FROM
 
 # Set versions in ENV
-ENV NODE_VERSION=18
-ENV WALLABAG_VERSION=2.6.10
+ENV NODE_VERSION=24
+ENV WALLABAG_VERSION=2.6.14
 
 # Setup base
 # hadolint ignore=DL3008,DL4006
@@ -22,30 +22,30 @@ RUN \
     # Prepare install of nodeJS
     && curl 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key' | apt-key add - \
     && echo "deb https://deb.nodesource.com/node_${NODE_VERSION}.x $(lsb_release -cs) main" > /etc/apt/sources.list.d/nodesource.list \
-    #Install and config PHP 8.2
+    #Install and config PHP 8.3
     && curl -J -L -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg \
     && echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list \
     && apt-get update \
     && apt-get install  -y --no-install-recommends \
-        php8.2-bcmath \
-        php8.2-cli \
-        php8.2-curl \
-        php8.2-fpm \
-        php8.2-gd \
-        php8.2-intl \
-        php8.2-mbstring \
-        php8.2-opcache \
-        php8.2-gettext \
-        php8.2-iconv \
-        php8.2-mysql \
-        php8.2-sockets \
-        php8.2-tidy \
-        php8.2-zip \
-        php8.2-redis \
-        php8.2-imagick \
-        php8.2-xdebug \
-        php8.2-xml \
-        php8.2 \
+        php8.3-bcmath \
+        php8.3-cli \
+        php8.3-curl \
+        php8.3-fpm \
+        php8.3-gd \
+        php8.3-intl \
+        php8.3-mbstring \
+        php8.3-opcache \
+        php8.3-gettext \
+        php8.3-iconv \
+        php8.3-mysql \
+        php8.3-sockets \
+        php8.3-tidy \
+        php8.3-zip \
+        php8.3-redis \
+        php8.3-imagick \
+        php8.3-xdebug \
+        php8.3-xml \
+        php8.3 \
         imagemagick \
         nodejs \
     # remove unecessary packages
@@ -88,7 +88,7 @@ LABEL \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.authors="Paulo Costa <coostax@duck.com>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.vendor="Home Assistant Add-ons/Apps" \
+    org.opencontainers.image.vendor="Home Assistant Apps" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
