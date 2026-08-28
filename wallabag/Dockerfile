@@ -2,7 +2,8 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.4.0
 # hadolint ignore=DL3006
 FROM $BUILD_FROM
 
-ENV BASE_IMAGE=$BUILD_FROM
+ARG BUILD_FROM
+ENV BUILD_FROM=$BUILD_FROM
 
 # Set version
 ENV WALLABAG_VERSION=2.6.14
