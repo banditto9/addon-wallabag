@@ -83,11 +83,8 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="app" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Paulo Costa <coostax@duck.com>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.authors="Paulo Costa <coostax@duck.com>" \
-    org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.vendor="Home Assistant Apps" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
