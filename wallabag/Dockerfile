@@ -2,8 +2,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.4.0
 # hadolint ignore=DL3006
 FROM $BUILD_FROM
 
-# Set versions in ENV
-ENV NODE_VERSION=24
+# Set version
 ENV WALLABAG_VERSION=2.6.14
 
 # Setup base
@@ -51,15 +50,17 @@ RUN \
         php8.3-xml \
         php8.3 \
         imagemagick \
-        nodejs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
 # Copy Wallabag sources
 WORKDIR /var/www
+
 # hadolint ignore=SC2086
 RUN curl -L -o wb_latest.tgz https://github.com/wallabag/wallabag/releases/download/${WALLABAG_VERSION}/wallabag-${WALLABAG_VERSION}.tar.gz \
     && tar xvf wb_latest.tgz \
-    && rm -f wb_latest.tgz && mv wallabag-${WALLABAG_VERSION} wallabag
+    && rm -f wb_latest.tgz \
+    && mv wallabag-${WALLABAG_VERSION} wallabag
 
 # S6-Overlay
 WORKDIR /
