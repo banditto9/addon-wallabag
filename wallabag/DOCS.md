@@ -158,14 +158,7 @@ display a `Register` button. You can use this button to register new users.
 You can have some control on the registrations by setting `fosuser_confirmation`
 to _true_ and receive confimation requests by email each time a new user registers.
 
-## Database usage
-
-By default, Wallabag will automatically use and configure the Home Assistant
-MariaDB addon which should be installed prior to startup, this can be changed
-within the configuration to use an external MySql/MariaDB Database. Please note
-that there is no easy upgrade path between the two options.
-
-## Known issues and limitations
+## Other known issues and limitations
 
 When SSL is turned on it setting requires setting `app_url` with the https address
 so that the page loads correctly. Failing to do this will make the site unable to
@@ -173,14 +166,3 @@ load css and javascripts correctly.
 
 The same is true when setting a reverse proxy. `app_url` must be set with
 the https address of the reverse proxy.
-
-
-## Authors & contributors
-
-The original setup of this repository is by [Paulo Costa][coostax].
-
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
-
-[wallabag]: https://wallabag.org/
-[wallabag-user-docs]: https://doc.wallabag.org/en/user/configuration/user_information.html
