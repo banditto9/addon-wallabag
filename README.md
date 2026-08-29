@@ -13,7 +13,7 @@ Further information can be found at https://wallabag.org
 ## Authors
 
 - The original setup of this HA app/add-on was done by Paulo Costa https://github.com/coostax/addon-wallabag
-- Original Wallabag project repo: https://github.com/wallabag/wallabag
+- Wallabag repo: https://github.com/wallabag/wallabag
 
 ## Environment versions:
 - Wallabag: 2.6.14 (current as per August 2026)
