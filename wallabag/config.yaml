@@ -2,7 +2,7 @@
 name: Wallabag
 version: 0.1
 slug: wallabag
-description: A web application allowing you to save web pages for later reading
+description: "Self-hosted web application allowing you to save web pages for later reading (like Instapaper or ReadLater)"
 url: "https://github.com/banditto9/addon-wallabag/"
 webui: "[PROTO:ssl]://[HOST]:[PORT:80]"
 services:
