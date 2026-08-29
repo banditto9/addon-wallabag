@@ -5,6 +5,8 @@ Wallabag app (older 'add-on') for Home Assistant (HA) - a web application allowi
 - Further information can be found at https://wallabag.org
 - Install details: https://github.com/banditto9/addon-wallabag/blob/main/wallabag/DOCS.md
 
+**Please note that Home Assistant always installs whatever is on the main branch. "Releases" are for a history of tagged, known-working states.**
+
 ##
 **(!)For clean installations - onetime DB manual steps required:**
 
