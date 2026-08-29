@@ -1,8 +1,7 @@
 # Home Assistant Add-on: Wallabag
 
 Wallabag is a web application allowing you to save web pages for later reading.
-Click, save and read it when you want. It extracts content so that you
-won't be distracted by pop-ups and cie.
+Click, save and read it when you want. 
 
 Further information can be found at https://wallabag.org
 
@@ -18,6 +17,22 @@ To install this add-on do the following steps:
 1. Search for the "Wallabag" add-on in the add-on store and install it.
 1. Start the "Wallabag" add-on.
 1. Check the logs of the "Wallabag" add-on to see if everything went well.
+
+##
+**(!)For clean installations - onetime DB manual steps required:**
+
+1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin'. Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
+2) Then create 'wallabag' db in phpmyadmin.
+3) Add priviliges for the created user to the 'wallabag' DB.
+4) Connect to the created wallabag DB with the created user as a 'remote connection'.
+
+**Some tips&notes:**
+- SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM).
+- I have exposed the app and my settings are as follows below the "Configuration" section, SSL forced https is managed by NPM (&port forward on router) so SSL is false here.
+- Deletion of Wallabag app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing wallabag db later if required.
+- Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups from myphpadmin if you have to switch between different versions of Wallabag.
+- If you delete MariaDB app (add-on) you will loose Wallabag data.
+- NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
 
 ## Configuration
 
@@ -105,6 +120,22 @@ Only applies if a remote MYSQL database is used, the password of the above user.
 Only applies if a remote MYSQL database is used, the port that the database
 server is listening on.
 
+```
+ssl: false
+certfile: fullchain.pem
+keyfile: privkey.pem
+twofactor_auth: false
+anyone_can_register: false
+locale: en
+fosuser_confirmation: true
+app_url: https://wallabag.example.com
+remote_mysql_host: core-mariadb
+remote_mysql_database: wallabag
+remote_mysql_username: wallabag
+remote_mysql_password: changemenow
+remote_mysql_port: 3306
+```
+
 ### Option: `token_secret`
 
 A secret key that's used to generate certain security-related tokens.
@@ -165,6 +196,11 @@ to _true_ and receive confimation requests by email each time a new user registe
 When SSL is turned on it setting requires setting `app_url` with the https address
 so that the page loads correctly. Failing to do this will make the site unable to
 load css and javascripts correctly.
+
+## Authors
+
+- The original setup of this HA app/add-on was done by Paulo Costa https://github.com/coostax/addon-wallabag
+- Wallabag repo: https://github.com/wallabag/wallabag
 
 The same is true when setting a reverse proxy. `app_url` must be set with
 the https address of the reverse proxy.
