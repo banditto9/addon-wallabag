@@ -4,7 +4,9 @@ Wallabag is a web application allowing you to save web pages for later reading.
 Click, save and read it when you want. It extracts content so that you
 won't be distracted by pop-ups and cie.
 
-Further information can be found at [Wallabag].
+Further information can be found at https://wallabag.org
+
+**Please note that Home Assistant always installs whatever is on the main branch. "Releases" are for a history of tagged, known-working states.**
 
 ## Installation
 
