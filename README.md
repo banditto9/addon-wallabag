@@ -13,7 +13,7 @@ Wallabag app (older 'add-on') for Home Assistant (HA) - a web application allowi
 3) Add priviliges for the created user to the 'wallabag' DB.
 4) Connect to the created wallabag DB with the created user as a 'remote connection'.
 
-Some tips&notes: \
+Some tips&notes:
 - SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM). \
 - I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here. \
 - Deletion of Wallabag app/add-on doesn't touch the DB data. \
