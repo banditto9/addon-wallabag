@@ -6,16 +6,20 @@ Wallabag app (older 'add-on') for Home Assistant (HA) - a web application allowi
 - Install details: https://github.com/banditto9/addon-wallabag/blob/main/wallabag/DOCS.md
 
 ##
-**(!)For clean installations - onetime DB manual steps required (not yet solved):**
+**(!)For clean installations - onetime DB manual steps required:**
 
-1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin'. Earlier setup under 'service' account doesn't work anymore, app/add-on simply can't be started without connection to DB
-2) Then create wallabag' db in phpmyadmin
-3) Add priviliges for the created user to the 'wallabag' DB
-4) Connect to the created wallabag db with the created user as a remote connection
+1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin'. Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
+2) Then create 'wallabag' db in phpmyadmin.
+3) Add priviliges for the created user to the 'wallabag' DB.
+4) Connect to the created wallabag DB with the created user as a 'remote connection'.
 
-SSL certs (if exposed to the Internet) easier to handle via NGINX Proxy Manager (NPM).
-I have exposed the app and my settings are as follows, SSL cert is managed by NPM (&port forward on router) so SSL is false here.
-Deletion of app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing wallabag db later if required.
+Some tips: \
+SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM). \
+I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here. \
+Deletion of Wallabag app/add-on doesn't touch the DB data. \
+You can reinstall the app/add-on and use the existing wallabag db later if required. \
+Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups from myphpadmin if you have to switch between different versions of Wallabag.
+If you delete MariaDB app (add-on) you will loose Wallabag data.
 ```
 ssl: false
 certfile: fullchain.pem
