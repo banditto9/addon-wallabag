@@ -184,3 +184,12 @@ php /var/www/wallabag/bin/console cache:clear --env=prod
 bashio::log.info "correcting owner settings on app folders"
 chown -R www-data:www-data /var/www/wallabag/app
 chown -R www-data:www-data /var/www/wallabag/var
+
+bashio::log.info "Ensure persistent Wallabag directories are writable"
+chown -R www-data:www-data /data/wallabag/assets
+chown -R www-data:www-data /data/wallabag/data
+chown -R www-data:www-data /data/wallabag/.cache
+
+bashio::log.info "Ensure Wallabag import directory exists and is writable"
+mkdir -p /var/www/wallabag/web/uploads/import
+chown -R www-data:www-data /var/www/wallabag/web/uploads
