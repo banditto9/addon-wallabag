@@ -2,6 +2,8 @@
 
 Wallabag app (earlier 'add-on') for Home Assistant (HA) - a web application allowing you to save web pages for later reading. Similar to Instapaper, ReadLater self-hosted functionality. Click, save and read it when you want.
 
+![Wallabag screenshot](images//screenshot.png)
+
 - Further information can be found at https://wallabag.org
 - Install details: https://github.com/banditto9/addon-wallabag/blob/main/wallabag/DOCS.md
 
