@@ -1,4 +1,5 @@
-**August 2026:**
+**v1.0 ~ v1.0.2**
+- v1.0.2 - increase max_execution_time value to 300s (5 minutes) for large imports and slow machines (default value of 30s caused issues importing more than 500 articles at once)
 - v1.0.1 - corrected import (tested with Intapaper csv), previously it gave /uploads folder permission error
 - Wallabag 2.6.14
 - Debian 13 (trixie) base image 9.4.0
