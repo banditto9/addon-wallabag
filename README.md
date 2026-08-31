@@ -39,8 +39,10 @@ remote_mysql_port: 3306
 ```
 
 **NGINX Proxy Manager settings for both local (http) and external (https) connections:**
-When you plan to use the wallabag both with http/https the following settings may be required due to the CORS issue as wallbag uses one specified URL which is usually https. By doing settings similar to the following ones may help you to overcome CORS issue and use wallabag both locally and externally:
 
+When you plan to use the wallabag both with http/https the following settings may be required due to the CORS issue as wallbag uses one specified URL which is usually https. By doing settings similar to the following ones may help you to overcome CORS issue and use wallabag both locally and externally:
+![Wallabag COSR issue1](images//CORS_fonts_issue1.png)
+![Wallabag COSR issue2](images//CORS_fonts_issue2.png)
 
 ## Authors
 
