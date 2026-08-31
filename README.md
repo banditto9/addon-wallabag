@@ -11,7 +11,7 @@ Wallabag app (earlier 'add-on') for Home Assistant (HA) - a web application allo
 
 ##
 **(!)For clean installations - onetime DB manual steps required:**
-0) This app/add-on uses MariaDB for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
+0) This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
 1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin' separate app (add-on). Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
 2) Then create 'wallabag' db in phpmyadmin.
 3) Add priviliges for the created user to the 'wallabag' DB.
@@ -21,7 +21,7 @@ Wallabag app (earlier 'add-on') for Home Assistant (HA) - a web application allo
 - SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM).
 - I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here.
 - Deletion of Wallabag app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing wallabag db later if required.
-- Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups from myphpadmin if you have to switch between different versions of Wallabag.
+- Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups (http://dev.mysql.com/doc/refman/5.7/en/backup-methods.html) from myphpadmin if you have to switch between different versions of Wallabag.
 - If you delete MariaDB app (add-on) you will loose Wallabag data.
 - NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
 ```
