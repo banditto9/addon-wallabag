@@ -9,7 +9,7 @@ Wallabag app (earlier 'add-on') for Home Assistant (HA) - a web application allo
 
 ##
 **(!)For clean installations - onetime DB manual steps required:**
-
+0) This app/add-on uses MariaDB for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
 1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin' separate app (add-on). Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
 2) Then create 'wallabag' db in phpmyadmin.
 3) Add priviliges for the created user to the 'wallabag' DB.
@@ -37,6 +37,10 @@ remote_mysql_username: wallabag
 remote_mysql_password: changemenow
 remote_mysql_port: 3306
 ```
+
+**NGINX Proxy Manager settings for both local (http) and external (https) connections:**
+When you plan to use the wallabag both with http/https the following settings may be required due to the CORS issue as wallbag uses one specified URL which is usually https. By doing settings similar to the following ones may help you to overcome CORS issue and use wallabag both locally and externally:
+
 
 ## Authors
 
