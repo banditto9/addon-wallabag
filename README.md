@@ -68,3 +68,6 @@ When you plan to use the wallabag both with http/https the following settings ma
 - Base image 9.4.0 (Debian 13 trixie)
 - PHP 8.3
 - Node.js 2x
+
+## License:
+License: MIT (https://en.wikipedia.org/wiki/MIT_License)
