@@ -9,7 +9,7 @@ parameters:
   database_path: ${DATABASE_PATH}
   database_table_prefix: wallabag_
   database_socket: null
-  database_charset: utf8
+  database_charset: utf8mb4
 
   domain_name: ${DOMAIN_NAME}
   server_name: ${SERVER_NAME}
