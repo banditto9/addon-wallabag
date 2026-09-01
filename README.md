@@ -11,9 +11,11 @@ Wallabag app (earlier 'add-on') for Home Assistant (HA) - a web application allo
 
 ##
 **(!)For clean installations - onetime DB manual steps required:**
-0) This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
+
+This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
+
 1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin' separate app (add-on). Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
-2) Then create 'wallabag' db in phpmyadmin.
+2) Then create 'wallabag' db in phpmyadmin (database_charset: utf8mb4 for emoji support and more wider charset support during import)
 3) Add priviliges for the created user to the 'wallabag' DB.
 4) Connect to the created wallabag DB with the created user as a 'remote connection'.
 
