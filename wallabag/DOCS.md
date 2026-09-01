@@ -197,10 +197,13 @@ When SSL is turned on it setting requires setting `app_url` with the https addre
 so that the page loads correctly. Failing to do this will make the site unable to
 load css and javascripts correctly.
 
+The same is true when setting a reverse proxy. `app_url` must be set with
+the https address of the reverse proxy.
+
 ## Authors
 
 - The original setup of this HA app/add-on was done by Paulo Costa https://github.com/coostax/addon-wallabag
 - Wallabag repo: https://github.com/wallabag/wallabag
 
-The same is true when setting a reverse proxy. `app_url` must be set with
-the https address of the reverse proxy.
+## License:
+License: MIT (https://en.wikipedia.org/wiki/MIT_License)
