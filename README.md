@@ -23,7 +23,7 @@ This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin ap
 - SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM).
 - I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here.
 - Deletion of Wallabag app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing wallabag db later if required.
-- Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups (http://dev.mysql.com/doc/refman/5.7/en/backup-methods.html) from myphpadmin if you have to switch between different versions of Wallabag.
+- Once you have migrated to Wallabag 2.6.14 you won't be able to access DB with earlier versions of Wallabag due to the different scheme of DB (migration will be performed by newer version). Please do DB backups (via myphpadmin) if you have to switch between different versions of Wallabag.
 - If you delete MariaDB app (add-on) you will loose Wallabag data.
 - NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
 - When using official mobile wallabag app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support.
