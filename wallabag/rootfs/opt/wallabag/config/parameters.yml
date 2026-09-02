@@ -1,54 +1,50 @@
----
 parameters:
-  database_driver: ${DATABASE_DRIVER}
-  database_host: ${DATABASE_HOST}
-  database_port: ${DATABASE_PORT}
-  database_name: ${DATABASE_NAME}
-  database_user: ${DATABASE_USER}
-  database_password: ${DATABASE_PASSWORD}
-  database_path: ${DATABASE_PATH}
-  database_table_prefix: wallabag_
-  database_socket: null
-  database_charset: utf8mb4
+    database_driver: ${DATABASE_DRIVER}
+    database_driver_class: null
+    database_host: ${DATABASE_HOST}
+    database_port: ${DATABASE_PORT}
+    database_name: ${DATABASE_NAME}
+    database_user: ${DATABASE_USER}
+    database_password: ${DATABASE_PASSWORD}
+    database_path: ${DATABASE_PATH}
+    database_table_prefix: wallabag_
+    database_socket: null
+    database_charset: utf8mb4
+    domain_name: ${DOMAIN_NAME}
+    server_name: ${SERVER_NAME}
+    mailer_dsn: smtp://127.0.0.1
+    # preparation for 2.7: wallabag_user_agent is not for 2.6.x
+    # wallabag_user_agent: "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.92 Safari/535.2"
+    locale: ${APP_LOCALE}
 
-  domain_name: ${DOMAIN_NAME}
-  server_name: ${SERVER_NAME}
-
-  mailer_dsn: smtp://127.0.0.1
-
-  locale: ${APP_LOCALE}
-
-  # A secret key that's used to generate certain security-related tokens
-  secret: ${TOKEN_SECRET}
-
-  # two factor stuff
-  twofactor_auth: $TWOFACTOR_AUTH
-  twofactor_sender: ${TWOFACTOR_SENDER}
-
-  # fosuser stuff TODO: set this to default false and get as param
-  fosuser_registration: $ANYONE_CAN_REGISTER
-  fosuser_confirmation: $FOS_USER_CONFIRMATION
-
-  fos_oauth_server_access_token_lifetime: 3600
-  fos_oauth_server_refresh_token_lifetime: 1209600
-
-  from_email: ${FROM_EMAIL}
-
-  rss_limit: 50
-
-  # RabbitMQ processing
-  rabbitmq_host: localhost
-  rabbitmq_port: 5672
-  rabbitmq_user: guest
-  rabbitmq_password: guest
-  rabbitmq_prefetch_count: 10
-
-  # Redis processing
-  redis_scheme: tcp
-  redis_host: localhost
-  redis_port: 6379
-  redis_path: null
-  redis_password: null
-
-  # Sentry
-  sentry_dsn: null
+    # A secret key that's used to generate certain security-related tokens
+    secret: ${TOKEN_SECRET}
+    
+    # two factor stuff
+    twofactor_auth: $TWOFACTOR_AUTH
+    twofactor_sender: ${TWOFACTOR_SENDER}
+    
+    # fosuser stuff TODO: set this to default false and get as param
+    fosuser_registration: $ANYONE_CAN_REGISTER
+    fosuser_confirmation: $FOS_USER_CONFIRMATION
+    fos_oauth_server_access_token_lifetime: 3600
+    fos_oauth_server_refresh_token_lifetime: 1209600
+    from_email: ${FROM_EMAIL}
+    rss_limit: 50
+    
+    # RabbitMQ processing
+    rabbitmq_host: localhost
+    rabbitmq_port: 5672
+    rabbitmq_user: guest
+    rabbitmq_password: guest
+    rabbitmq_prefetch_count: 10
+    
+    # Redis processing
+    redis_scheme: tcp
+    redis_host: localhost
+    redis_port: 6379
+    redis_path: null
+    redis_password: null
+    
+    # Sentry
+    sentry_dsn: null
