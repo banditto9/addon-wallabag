@@ -66,7 +66,7 @@ When you plan to use the 'wallabag' both with http/https the following settings 
 ## Environment versions:
 - 'wallabag': 2.6.14 (current as per August 2026)
 - Base image 9.4.0 (Debian 13 trixie)
-- PHP 8.3
+- PHP 8.4
 - Node.js 2x
 
 ## License:
