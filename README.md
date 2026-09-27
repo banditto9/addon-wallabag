@@ -1,8 +1,8 @@
-# Home Assistant App/Add-on: 'wallabag'
+# Home Assistant App/Add-on: _wallabag_
 
-'wallabag' app (earlier 'add-on') for Home Assistant (HA) - a web application allowing you to save web pages for later reading. Similar to Instapaper, ReadLater self-hosted functionality. Click, save and read it when you want.
+_wallabag_ app (earlier 'add-on') for Home Assistant (HA) - a web application allowing you to save web pages for later reading. Similar to Instapaper, ReadLater self-hosted functionality. Click, save and read it when you want.
 
-!['wallabag' screenshot](images//screenshot.png)
+![_wallabag_ screenshot](images//screenshot.png)
 
 - Further information can be found at https://wallabag.org
 - Install details: https://github.com/banditto9/addon-wallabag/blob/main/wallabag/DOCS.md
@@ -15,18 +15,18 @@
 This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin apps/add-ons should be installed to run this app/add-on accordingly)
 
 1) MariaDB requires manual user creation (with some password) - easy to do via 'phpmyadmin' separate app (add-on). Earlier automated DB setup under 'service' account doesn't work anymore, freshly installed app/add-on simply can't be started without connection to DB.
-2) Then create 'wallabag' db in phpmyadmin (database_charset: utf8mb4 for emoji support and more wider charset support during import)
-3) Add priviliges for the created user to the 'wallabag' DB.
-4) Connect to the created 'wallabag' DB with the created user as a 'remote connection'.
+2) Then create _wallabag_ db in phpmyadmin (database_charset: utf8mb4 for emoji support and more wider charset support during import)
+3) Add priviliges for the created user to the _wallabag_ DB.
+4) Connect to the created _wallabag_ DB with the created user as a 'remote connection'.
 
 **Some tips&notes:**
 - SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM).
 - I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here.
-- Deletion of 'wallabag' app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing 'wallabag' db later if required.
-- Once you have migrated to 'wallabag' 2.6.x you won't be able to access DB with earlier versions of 'wallabag' (2.5.x) due to the different scheme of DB (migration will be performed by newer version). Please do DB backups first (easy via myphpadmin app/add-on) if you have to switch between different versions of 'wallabag'.
-- If you delete MariaDB app (add-on) you will loose 'wallabag' data.
+- Deletion of _wallabag_ app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing _wallabag_ db later if required.
+- Once you have migrated to _wallabag_ 2.6.x you won't be able to access DB with earlier versions of _wallabag_ (2.5.x) due to the different scheme of DB (migration will be performed by newer version). Please do DB backups first (easy via myphpadmin app/add-on) if you have to switch between different versions of _wallabag_.
+- If you delete MariaDB app (add-on) you will loose _wallabag_ data.
 - NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
-- When using official mobile 'wallabag' app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support.
+- When using official mobile _wallabag_ app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support.
 ```
 ssl: false
 certfile: fullchain.pem
@@ -45,14 +45,14 @@ remote_mysql_port: 3306
 
 **NGINX Proxy Manager settings for both local (http) and external (https) connections:**
 
-When you plan to use the 'wallabag' both with http/https the following settings may be required due to the CORS issue as wallbag uses one specified URL which is usually https. By doing settings similar to the following ones may help you to overcome CORS issue and use 'wallabag' both locally and externally.
+When you plan to use the _wallabag_ both with http/https the following settings may be required due to the CORS issue as wallbag uses one specified URL which is usually https. By doing settings similar to the following ones may help you to overcome CORS issue and use _wallabag_ both locally and externally.
 
 <details>
 
 <summary>📷 Click to show screenshots</summary>
 
-!['wallabag' COSR issue1](images/CORS_fonts_issue1.png)
-!['wallabag' COSR issue2](images/CORS_fonts_issue2.png)
+![_wallabag_ COSR issue1](images/CORS_fonts_issue1.png)
+![_wallabag_ COSR issue2](images/CORS_fonts_issue2.png)
 
 </details>
 
@@ -61,10 +61,10 @@ When you plan to use the 'wallabag' both with http/https the following settings 
 ## Authors
 
 - The original setup of this HA app/add-on was done by Paulo Costa https://github.com/coostax/addon-wallabag
-- 'wallabag' repo: https://github.com/wallabag/wallabag
+- _wallabag_ repo: https://github.com/wallabag/wallabag
 
 ## Environment versions:
-- 'wallabag': 2.6.14 (current as per September 2026)
+- _wallabag_: 2.6.14 (current as per September 2026)
 - Base image 9.5.0 (Debian 13 trixie)
 - PHP 8.4
 - Node.js 2x
