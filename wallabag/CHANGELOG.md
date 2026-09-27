@@ -1,4 +1,5 @@
 **v1.0 ~ v1.0.5*
+- v1.0.6 - base image 9.5.0 (Debian 13 trixie)
 - v1.0.5 - change from php8.3 to 8.4
 - v1.0.4 - parameters.yml - small tidy up, added commented (unused in 2.6.x) parameter 'user_agent' as minor first step preparation for 2.7
 - v1.0.3 - database_charset changed to utf8mb4 as per wallabag docs (emoji etc)
