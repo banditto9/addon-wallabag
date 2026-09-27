@@ -1,4 +1,4 @@
-**v1.0.1 ~ v1.0.6*
+**v1.0.1 ~ v1.0.6**
 - v1.0.6 - base image 9.5.0 (Debian 13 trixie)
 - v1.0.5 - change from php8.3 to 8.4
 - v1.0.4 - parameters.yml - small tidy up, added commented (unused in 2.6.x) parameter 'user_agent' as minor first step preparation for 2.7
@@ -6,7 +6,7 @@
 - v1.0.2 - increase max_execution_time value to 300s (5 minutes) for large imports and slow machines (default value of 30s caused issues importing more than 500 articles at once)
 - v1.0.1 - corrected import (tested with Intapaper csv), previously it gave /uploads folder permission error
 
-**v1.0*
+**v1.0**
 - Wallabag 2.6.14
 - Debian 13 (trixie) base image 9.4.0
 - Environment software versions added to the log output for troubleshooting if any required
