@@ -64,8 +64,8 @@ When you plan to use the 'wallabag' both with http/https the following settings 
 - 'wallabag' repo: https://github.com/wallabag/wallabag
 
 ## Environment versions:
-- 'wallabag': 2.6.14 (current as per August 2026)
-- Base image 9.4.0 (Debian 13 trixie)
+- 'wallabag': 2.6.14 (current as per September 2026)
+- Base image 9.5.0 (Debian 13 trixie)
 - PHP 8.4
 - Node.js 2x
 
