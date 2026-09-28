@@ -66,4 +66,4 @@ When you plan to use the _wallabag_ both with http/https the following settings 
 - Copyright © 2013-current [Nicolas Lœuillet](mailto:nicolas@loeuillet.org)
 - [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [COPYING.md](https://github.com/wallabag/wallabag/blob/master/COPYING.md) file for more details.
 - The original setup of this Home Assistant app (add-on) was done by [Paulo Costa](https://github.com/coostax/addon-wallabag)
-- _wallabag_ [offocial repo](https://github.com/wallabag/wallabag)
+- _wallabag_ [official repo](https://github.com/wallabag/wallabag)
