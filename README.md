@@ -56,18 +56,14 @@ When you plan to use the _wallabag_ both with http/https the following settings 
 
 </details>
 
-
-
-## Authors
-
-- The original setup of this HA app/add-on was done by Paulo Costa https://github.com/coostax/addon-wallabag
-- _wallabag_ repo: https://github.com/wallabag/wallabag
-
 ## Environment versions:
 - _wallabag_: 2.6.14 (current as per September 2026)
 - Base image 9.5.0 (Debian 13 trixie)
 - PHP 8.4
 - Node.js 2x
 
-## License:
-License: MIT (https://en.wikipedia.org/wiki/MIT_License)
+## Authors & credits:
+- Copyright © 2013-current [Nicolas Lœuillet](mailto:nicolas@loeuillet.org)
+- [MIT License](https://en.wikipedia.org/wiki/MIT_License). See the [COPYING.md](https://github.com/wallabag/wallabag/blob/master/COPYING.md) file for more details.
+- The original setup of this Home Assistant app (add-on) was done by [Paulo Costa](https://github.com/coostax/addon-wallabag)
+- _wallabag_ [offocial repo](https://github.com/wallabag/wallabag)
