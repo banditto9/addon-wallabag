@@ -19,14 +19,14 @@ This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin ap
 3) Add priviliges for the created user to the _wallabag_ DB.
 4) Connect to the created _wallabag_ DB with the created user as a 'remote connection'.
 
-**Some tips&notes:**
+**Some tips & notes:**
 - SSL cert (if exposed to the Internet) is easier to handle via NGINX Proxy Manager (NPM).
 - I have exposed the app and my settings are as follows below, SSL forced https is managed by NPM (&port forward on router) so SSL is false here.
 - Deletion of _wallabag_ app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing _wallabag_ db later if required.
 - Once you have migrated to _wallabag_ 2.6.x you won't be able to access DB with earlier versions of _wallabag_ (2.5.x) due to the different scheme of DB (migration will be performed by newer version). Please do DB backups first (easy via myphpadmin app/add-on) if you have to switch between different versions of _wallabag_.
 - If you delete MariaDB app (add-on) you will loose _wallabag_ data.
 - NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
-- When using official mobile _wallabag_ app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support.
+- When using official mobile _wallabag_ app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support. Once the Android app is authenticated, you can put forced redirect to 443 (next time you will re-authenticate Android app from the scratch, opening port 80 may be highly likely required again) - better to ask _wallabag_ developer team about this behaviour.
 ```
 ssl: false
 certfile: fullchain.pem
