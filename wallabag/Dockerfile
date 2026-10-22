@@ -51,7 +51,6 @@ RUN \
         php8.4-zip \
         php8.4-redis \
         php8.4-imagick \
-        php8.4-xdebug \
         php8.4-xml \
         php8.4 \
         imagemagick \
