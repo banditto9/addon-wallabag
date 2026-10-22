@@ -1,4 +1,5 @@
-**v1.0.1 ~ v1.0.7**
+**v1.0.1 ~ v1.0.8**
+- v1.0.8 - base image 9.5.1
 - v1.0.7 - PHP2shell hardening (PHP min ver 8.4.27 check, if not build fails)
 - v1.0.6 - base image 9.5.0 (Debian 13 trixie)
 - v1.0.5 - change from php8.3 to 8.4
