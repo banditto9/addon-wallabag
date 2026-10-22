@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.5.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:9.5.1
 # hadolint ignore=DL3006
 FROM $BUILD_FROM
 
@@ -7,8 +7,6 @@ ENV BASE_IMAGE="$BUILD_FROM"
 
 # Set version
 ENV WALLABAG_VERSION=2.6.14
-# Change this value to force a fresh PHP install on rebuild
-ENV PHP_REBUILD=2026-10-22-php2shell
 
 # Setup base
 # hadolint ignore=DL3008,DL4006
