@@ -7,6 +7,8 @@ ENV BASE_IMAGE="$BUILD_FROM"
 
 # Set version
 ENV WALLABAG_VERSION=2.6.14
+# Change this value to force a fresh PHP install on rebuild
+ENV PHP_REBUILD=2026-10-22-php2shell
 
 # Setup base
 # hadolint ignore=DL3008,DL4006
@@ -55,6 +57,11 @@ RUN \
         imagemagick \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Fail the build if PHP is older than the PHP2Shell fix
+RUN php -r 'exit(version_compare(PHP_VERSION, "8.4.27", ">=") ? 0 : 1);' \
+    && printf 'session.upload_progress.enabled = 0\n' \
+       > /etc/php/8.4/fpm/conf.d/99-hardening.ini
 
 # Copy Wallabag sources
 WORKDIR /var/www
