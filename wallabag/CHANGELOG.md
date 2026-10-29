@@ -1,5 +1,6 @@
-**v1.1.0**
+**v1.1.0 ~ v1.1.1**
 - _wallabag_ 2.6.15 (read more in the [official blog](https://wallabag.org/news/20261028-new-release-wallabag-2615/))
+- "noisy log" filter for NGINX - authorized logins, mobile app polling like /api/version should vanish from the log, while real failures such as 401, 404 and 500 stay visible. This reduces huge amount of noisy output in the add-on/app output in HA.
 
 **v1.0.1 ~ v1.0.8**
 - v1.0.8 - base image 9.5.1
