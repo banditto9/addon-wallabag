@@ -58,7 +58,7 @@ RUN \
 # Fail the build if PHP is older than the PHP2Shell fix
 RUN php -r 'exit(version_compare(PHP_VERSION, "8.4.27", ">=") ? 0 : 1);' \
     && printf 'session.upload_progress.enabled = 0\n' \
-       > /etc/php/8.4/fpm/conf.d/99-hardening.ini
+       > /etc/php/8.4/fpm/conf.d/S99-hardening.ini
 
 # Copy Wallabag sources
 WORKDIR /var/www
@@ -74,6 +74,11 @@ WORKDIR /
 
 # Copy root filesystem
 COPY rootfs /
+
+# Silence noisy nginx access-log lines (API polling, assets, routing)
+RUN chmod +x /usr/local/sbin/quiet-nginx-logs.sh \
+    && /usr/local/sbin/quiet-nginx-logs.sh \
+    && rm -f /usr/local/sbin/quiet-nginx-logs.sh
 
 # Build arguments
 ARG \
