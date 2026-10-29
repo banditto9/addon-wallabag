@@ -1,4 +1,7 @@
 **v1.0.1 ~ v1.0.8**
+- _wallabag_ 2.6.15
+
+**v1.0.1 ~ v1.0.8**
 - v1.0.8 - base image 9.5.1
 - v1.0.7 - PHP2shell hardening (PHP min ver 8.4.27 check, if not build fails)
 - v1.0.6 - base image 9.5.0 (Debian 13 trixie)
@@ -9,7 +12,7 @@
 - v1.0.1 - corrected import (tested with Intapaper csv), previously it gave /uploads folder permission error
 
 **v1.0**
-- Wallabag 2.6.14
+- _wallabag_ 2.6.14
 - Debian 13 (trixie) base image 9.4.0
 - Environment software versions added to the log output for troubleshooting if any required
 - (!)NB: For clean installations: MariaDB requires manual user creation (with some password), 'wallabag' db creation and addition of created user priviliges to the 'wallabag' DB, then use wallabag app/add-on as a remote connection
