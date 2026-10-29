@@ -35,4 +35,11 @@ patched=0
 while IFS= read -r f; do
     sed -Ei '/^[[:space:]]*access_log[[:space:]]+off[[:space:]]*;/! { /if=/! s/^([[:space:]]*access_log[[:space:]]+[^;]*[^[:space:];])[[:space:]]*;/\1 if=$loggable;/ }' "$f"
     patched=1
-don
+done < <(grep -rlE '^[[:space:]]*access_log[[:space:]]' "${NGINX_DIR}" --exclude="$(basename "${MAP_FILE}")" || true)
+
+if [ "${patched}" -eq 0 ] || ! grep -rqF 'if=$loggable' "${NGINX_DIR}"; then
+    echo "ERROR: no access_log directive was patched; check your nginx config." >&2
+    exit 1
+fi
+
+echo "nginx access log filter installed."
