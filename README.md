@@ -25,6 +25,7 @@ This app/add-on uses MariaDB (MySQL) for storing data (MariaDB and phpmyadmin ap
 - Deletion of _wallabag_ app/add-on doesn't touch the DB data. You can reinstall the app/add-on and use the existing _wallabag_ db later if required.
 - Once you have migrated to _wallabag_ 2.6.x you won't be able to access DB with earlier versions of _wallabag_ (2.5.x) due to the different scheme of DB (migration will be performed by newer version). Please do DB backups first (easy via myphpadmin app/add-on) if you have to switch between different versions of _wallabag_.
 - If you delete MariaDB app (add-on) you will loose _wallabag_ data.
+- "noisy log" filter (/usr/local/sbin/[quiet-nginx-logs.sh](https://github.com/banditto9/addon-wallabag/blob/main/wallabag/rootfs/usr/local/sbin/quiet-nginx-logs.sh)) for NGINX - authorized logins, mobile app polling like /api/version should vanish from the log, while real failures such as 401, 404 and 500 stay visible. This reduces huge amount of noisy output in the add-on/app output in HA.
 - NGINX proxy manager (if used): better to switch off cache option and restart it as sometimes proper html/css may be displayed incorrectly at first launch.
 - When using official mobile _wallabag_ app on Android it's recommended to keep outside (port forward for home self-hosted) not only port 443 but 80 as well with strict redirection from 80 to 443 as mobile app first always tries connecting port 80 (seems to be hardcoded or something like that - at least for v2.6.0) and having only 443 will make it fail to connect. Mobile app also lacks 2FA authentication support. Once the Android app is authenticated, you can put forced redirect to 443 (next time you will re-authenticate Android app from the scratch, opening port 80 may be highly likely required again) - better to ask _wallabag_ developer team about this behaviour.
 ```
@@ -57,7 +58,7 @@ When you plan to use the _wallabag_ both with http/https the following settings 
 </details>
 
 ## Environment versions:
-- _wallabag_: 2.6.14 (current as per September 2026)
+- _wallabag_: 2.6.15 (current as per October 2026)
 - Base image 9.5.1 (Debian 13 trixie)
 - PHP 8.4.27 as min ver (PHP2shell breach)
 - Node.js 2x
