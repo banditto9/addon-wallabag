@@ -1,3 +1,6 @@
+**v1.2.0**
+- _wallabag_ 2.6.16
+
 **v1.1.0 ~ v1.1.1**
 - v1.1.1 - base image 9.5.2
 - _wallabag_ 2.6.15 (read more in the [official blog](https://wallabag.org/news/20261028-new-release-wallabag-2615/))
