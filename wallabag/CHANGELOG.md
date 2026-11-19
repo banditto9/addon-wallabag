@@ -1,3 +1,6 @@
+**v1.4.0**
+- _wallabag_ 2.6.18  (read more in the [official blog](https://wallabag.org/news/20261119-new-release-wallabag-2618/))
+
 **v1.3.0**
 - _wallabag_ 2.6.17
 
